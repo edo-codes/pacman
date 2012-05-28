@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Pacman : pacman in curses using python" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Pacman</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/Edootjuh/pacman">View on GitHub</a>
+
+          <h1 id="project_title">Pacman</h1>
+          <h2 id="project_tagline">pacman in curses using python</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/Edootjuh/pacman/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/Edootjuh/pacman/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>README</h1>
+
+<h2>Pacman</h2>
+
+<p>This is an implementation of the classic game "Pac-man", using Python 3.2. It uses the console library for its UI.</p>
+
+<h3>Gameplay</h3>
+
+<p>Right now, the enemy logic hasn't been coded yet, only directly chasing the player. You control the player with the arrow keys, you eat the pellets and avoid the enemies.</p>
+
+<h3>Implementation</h3>
+
+<p>I have attempted to abstract the 'framework' bits from the game to a certain degree so that I might add a sprite-based ui later.</p>
+
+<p>It is all written in a single file, so I don't have to switch buffers in vim.</p>
+
+<p>First the game objects are created, such as the player, the ghosts, the pellets etc., all inheriting from a <code>gameobject</code> base class. They contain their position, size and color, and game logic for that object.</p>
+
+<p>The <code>steptowards()</code> method implements a simple pathfinding algorithm that stores a cache -- <code>pathfindingqueue</code> -- inside each object that another object routes to. This is so that multiple enemies can chase the player without repeating the calculations in a single step.</p>
+
+<p>The <code>init()</code>, <code>gameloop()</code>, <code>keypress()</code> and <code>draw()</code> are all methods that are called by the 'framework'. <code>draw()</code> uses curses directly and contains the 'drawings' for the objects, which might not be very clean.</p>
+
+<p>Many methods accept an objects list in a (probably misguided) attempt to make the whole thing a bit more functional (as in functional programming functional).</p>
+
+<p>The framework uses the <code>curses</code> library. </p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Pacman maintained by <a href="https://github.com/Edootjuh">Edootjuh</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
