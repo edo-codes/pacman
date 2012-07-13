@@ -1,0 +1,1 @@
+Pacman in Python for console, using the curses library. Unfinished: little enemy logic and slow pathfinding.
